@@ -17,6 +17,10 @@ app.use(express.json());
 app.use('/api/blogs', blogRoutes);
 app.use('/api/auth', authRoutes);
 
+app.get("/api/hello", (req, res) => {
+  res.send("Hello from Express on Vercel!");
+});
+
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
 }).then(() => console.log('MongoDB connected'))
